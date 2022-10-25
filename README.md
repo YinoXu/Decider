@@ -69,6 +69,10 @@ An Example List with Embedded Items:
 
 ![list](documentation/LuckyWheel.png)
 
+/intro/luckywheel/templates
+
+![list](documentation/templates.png)
+
 /list/Genertator - page for showing the Ramdom Number Generator
 
 ![list](documentation/Generator.png)
@@ -78,6 +82,8 @@ An Example List with Embedded Items:
 (__TODO__: draw out a site map that shows how pages are related to each other)
 
 Here's a [complex example from wikipedia](https://upload.wikimedia.org/wikipedia/commons/2/20/Sitemap_google.jpg), but you can create one without the screenshots, drop shadows, etc. ... just names of pages and where they flow to.
+
+![list create](documentation/map.png)
 
 ## User Stories or Use Cases
 

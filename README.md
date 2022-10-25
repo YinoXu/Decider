@@ -8,14 +8,18 @@ The content below is an example project proposal / requirements document. Replac
 
 (__TODO__: a brief one or two paragraph, high-level description of your project)
 
-Remembering what to buy at the grocery store is waaaaay too difficult. Also, shopping for groceries when you're hungry leads to regrettable purchases. Sooo... that's where Shoppy Shoperson comes in!
+What's for dinner tonight? Should I say yes to him? What to review first for the upcoming exam? Who's next to do the housework?
 
-Shoppy Shoperson is a web app that will allow users to keep track of multiple grocery lists. Users can register and login. Once they're logged in, they can create or view their grocery list. For every list that they have, they can add items to the list or cross off items.
+We believe many of us have a hard time making some decisions nowadays. There is no best option, and there is no worst option! Then let "decider" choose randomly for you!
+Coping with the difficulties of making choices, "decider" can help users make quick decisions to save time. No hesitation, let's obey the fate!
+
+Decider is a web app that mainly for the users who have a hard time making choices, or the users who have many equally important tasks and feels hard to arrange the priority. Users can add their choices or tasks, which will be arranged equally into a "lucky wheel".
+What's more, it's multifunctional in at any place, at any time -- the "lucky one" is always easily and fairly chosen. During class, it helps the teachers to select students randomly to answer the questions. During parties, it helps to pick people randomly or play truth or dare games.
 
 
 ## Data Model
 
-(__TODO__: a description of your application's data and their relationships to each other) 
+(__TODO__:   
 
 The application will store Users, Lists and Items
 

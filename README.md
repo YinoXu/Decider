@@ -63,7 +63,7 @@ An Example List with Embedded Items:
 
 /intro - the home page
 
-![list create](documentation/introduction.png)
+![list create](documentation/intro.png)
 
 /intro/luckywheel - page for showing the lucky wheel
 

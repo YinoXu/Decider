@@ -32,9 +32,8 @@ An Example User:
 
 ```javascript
 {
-  username: "shannonshopper",
+  username: "decider",
   hash: // a password hash,
-  lists: // an array of references to List documents
 }
 ```
 
@@ -43,10 +42,11 @@ An Example List with Embedded Items:
 ```javascript
 {
   user: // a reference to a User object
-  name: "Breakfast foods",
+  name: "Lucky Wheel-what should I eat tonight?",
   items: [
-    { name: "pancakes", quantity: "9876", checked: false},
-    { name: "ramen", quantity: "2", checked: true},
+    { name: "ramen", weight: 0.3, color: 'red'},
+    { name: "sushi", weight: 0.3, color: 'yellow'},
+    { name: "salmon", weight: 0.4, checked: 'blue'},
   ],
   createdAt: // timestamp
 }
@@ -61,17 +61,17 @@ An Example List with Embedded Items:
 
 (__TODO__: wireframes for all of the pages on your site; they can be as simple as photos of drawings or you can use a tool like Balsamiq, Omnigraffle, etc.)
 
-/list/create - page for creating a new shopping list
+/intro - the home page
 
-![list create](documentation/list-create.png)
+![list create](documentation/introduction.png)
 
-/list - page for showing all shopping lists
+/intro/luckywheel - page for showing the lucky wheel
 
-![list](documentation/list.png)
+![list](documentation/LuckyWheel.png)
 
-/list/slug - page for showing specific shopping list
+/list/Genertator - page for showing the Ramdom Number Generator
 
-![list](documentation/list-slug.png)
+![list](documentation/Generator.png)
 
 ## Site map
 

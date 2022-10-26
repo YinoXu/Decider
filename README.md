@@ -1,8 +1,8 @@
-The content below is an example project proposal / requirements document. Replace the text below the lines marked "__TODO__" with details specific to your project. Remove the "TODO" lines.
+<!-- The content below is an example project proposal / requirements document. Replace the text below the lines marked "__TODO__" with details specific to your project. Remove the "TODO" lines.
 
-(__TODO__: your project name)
+(__TODO__: your project name) -->
 
-# Shoppy Shoperson 
+# Decider
 
 ## Overview
 
@@ -19,7 +19,7 @@ What's more, it's multifunctional in at any place, at any time -- the "lucky one
 
 
 ## Data Model
-
+<!-- 
 (__TODO__:   
 
 The application will store Users, Lists and Items
@@ -27,7 +27,7 @@ The application will store Users, Lists and Items
 * users can have multiple lists (via references)
 * each list can have multiple items (by embedding)
 
-(__TODO__: sample documents)
+(__TODO__: sample documents) -->
 
 An Example User:
 
@@ -56,11 +56,11 @@ An Example List with Embedded Items:
 
 ## [Link to Commented First Draft Schema](db.mjs) 
 
-(__TODO__: create a first draft of your Schemas in db.mjs and link to it)
+<!-- (__TODO__: create a first draft of your Schemas in db.mjs and link to it) -->
 
 ## Wireframes
-
-(__TODO__: wireframes for all of the pages on your site; they can be as simple as photos of drawings or you can use a tool like Balsamiq, Omnigraffle, etc.)
+<!-- 
+(__TODO__: wireframes for all of the pages on your site; they can be as simple as photos of drawings or you can use a tool like Balsamiq, Omnigraffle, etc.) -->
 
 /intro - the home page
 
@@ -82,28 +82,28 @@ An Example List with Embedded Items:
 
 (__TODO__: draw out a site map that shows how pages are related to each other)
 
-Here's a [complex example from wikipedia](https://upload.wikimedia.org/wikipedia/commons/2/20/Sitemap_google.jpg), but you can create one without the screenshots, drop shadows, etc. ... just names of pages and where they flow to.
+<!-- Here's a [complex example from wikipedia](https://upload.wikimedia.org/wikipedia/commons/2/20/Sitemap_google.jpg), but you can create one without the screenshots, drop shadows, etc. ... just names of pages and where they flow to. -->
 
 ![list create](documentation/map.png)
 
 ## User Stories or Use Cases
 
-(__TODO__: write out how your application will be used through [user stories](http://en.wikipedia.org/wiki/User_story#Format) and / or [use cases](https://en.wikipedia.org/wiki/Use_case))
+<!-- (__TODO__: write out how your application will be used through [user stories](http://en.wikipedia.org/wiki/User_story#Format) and / or [use cases](https://en.wikipedia.org/wiki/Use_case)) -->
 
 1. as non-registered user, I can register a new account with the site
 2. as a user, I can log in to the homepage
 3. as a user, create a new lucky wheel template and edit on it.
 4. as a suser, I can edit the items' color and weight.
 5. as a usser, I can delete the items and the lucky wheels. 
-4. as a user, I can view all of the lucky wheel lists I've created in a single list.
-5. as a user, I can use the ramdom number generator to generate numbers randomly.
-6. as a user, I can choose the in terval for the random number generator.
-7. as a user, I can enter the number of numbers I want to generate.
-8. as a user, I can view the activity history if I logged to an exist account. 
+6. as a user, I can view all of the lucky wheel lists I've created in a single list.
+7. as a user, I can use the ramdom number generator to generate numbers randomly.
+8. as a user, I can choose the in terval for the random number generator.
+9. as a user, I can enter the number of numbers I want to generate.
+10. as a user, I can view the activity history if I logged to an exist account. 
 
 ## Research Topics
-
-(__TODO__: the research topics that you're planning on working on along with their point values... and the total points of research topics listed)
+<!-- 
+(__TODO__: the research topics that you're planning on working on along with their point values... and the total points of research topics listed) -->
 
 * (6 points) Use a front-end framework
   * I am going to use react as the frontend framework, react will efficiently update and render just the right components when my data changes. Declarative views make my code more predictable, simpler to understand, and easier to debug.
@@ -115,12 +115,12 @@ Here's a [complex example from wikipedia](https://upload.wikimedia.org/wikipedia
 
 ## [Link to Initial Main Project File](app.mjs) 
 
-(__TODO__: create a skeleton Express application with a package.json, app.mjs, views folder, etc. ... and link to your initial app.mjs)
+<!-- (__TODO__: create a skeleton Express application with a package.json, app.mjs, views folder, etc. ... and link to your initial app.mjs) -->
 
 ## Annotations / References Used
 
-(__TODO__: list any tutorials/references/etc. that you've based your code off of)
+<!-- (__TODO__: list any tutorials/references/etc. that you've based your code off of) -->
 
 1. [tutorial on react](https://github.com/facebook/react)
-2. [tutorial on bootstrap](https://getbootstrap.com/) - (add link to source code that was based on this)
+2. [tutorial on bootstrap](https://getbootstrap.com/)
 

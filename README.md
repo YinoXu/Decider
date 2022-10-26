@@ -8,14 +8,12 @@
 
 <!-- (__TODO__: a brief one or two paragraph, high-level description of your project) -->
 
-What's for dinner tonight? Should I say yes to him? What to review first for the upcoming exam? Who's next to do the housework?
+What's for dinner tonight? What to review first for the upcoming exam? Who's next to do the housework? Many of us are having a hard time making some decisions nowadays. There is no best option, and there is no worst option! Then let "decider" choose randomly for you!
+Coping with the difficulties of making choices, "decider" can help users make quick decisions to save time. No hesitation, let's obey fate!
 
-We believe many of us have a hard time making some decisions nowadays. There is no best option, and there is no worst option! Then let "decider" choose randomly for you!
-Coping with the difficulties of making choices, "decider" can help users make quick decisions to save time. No hesitation, let's obey the fate!
+The decider is a web app that is mainly for users who have a hard time making choices or users who have many equally important tasks and feels hard to arrange the priority. Users can add their choices or tasks, which will be arranged equally into a "lucky wheel". Users can also use the Random Number Generator to choose the numbers in any interval they want. 
 
-Decider is a web app that mainly for the users who have a hard time making choices, or the users who have many equally important tasks and feels hard to arrange the priority. Users can add their choices or tasks, which will be arranged equally into a "lucky wheel". Users can also use the Ramdom Number Generator to choose the numbers in any interval they want. 
-
-What's more, it's multifunctional in at any place, at any time -- the "lucky one" is always easily and fairly chosen. During class, it helps the teachers to select students randomly to answer the questions. During parties, it helps to pick people randomly or play truth or dare games.
+What's more, it's multifunctional in any place, at any time -- the "lucky one" is always easily and fairly chosen. During class, it helps the teachers to select students randomly to answer the questions. During parties, it helps to pick people randomly or play truth or dare games.
 
 
 ## Data Model

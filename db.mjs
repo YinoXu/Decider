@@ -1,5 +1,5 @@
 // 1ST DRAFT DATA MODEL
-const mongoose = require('mongoose');
+import mongoose from 'mongoose';
 
 // users
 // * our site requires authentication...

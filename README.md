@@ -6,7 +6,7 @@
 
 ## Overview
 
-(__TODO__: a brief one or two paragraph, high-level description of your project)
+<!-- (__TODO__: a brief one or two paragraph, high-level description of your project) -->
 
 What's for dinner tonight? Should I say yes to him? What to review first for the upcoming exam? Who's next to do the housework?
 
@@ -80,7 +80,7 @@ An Example List with Embedded Items:
 
 ## Site map
 
-(__TODO__: draw out a site map that shows how pages are related to each other)
+<!-- (__TODO__: draw out a site map that shows how pages are related to each other) -->
 
 <!-- Here's a [complex example from wikipedia](https://upload.wikimedia.org/wikipedia/commons/2/20/Sitemap_google.jpg), but you can create one without the screenshots, drop shadows, etc. ... just names of pages and where they flow to. -->
 

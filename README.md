@@ -72,7 +72,7 @@ An Example List with Embedded Items:
 
 ![list](documentation/templates.png)
 
-/list/Genertator - page for showing the Ramdom Number Generator
+/intro/genertator - page for showing the Ramdom Number Generator
 
 ![list](documentation/Generator.png)
 
@@ -88,16 +88,16 @@ An Example List with Embedded Items:
 
 <!-- (__TODO__: write out how your application will be used through [user stories](http://en.wikipedia.org/wiki/User_story#Format) and / or [use cases](https://en.wikipedia.org/wiki/Use_case)) -->
 
-1. as non-registered user, I can register a new account with the site
-2. as a user, I can log in to the homepage
-3. as a user, create a new lucky wheel template and edit on it.
-4. as a suser, I can edit the items' color and weight.
-5. as a usser, I can delete the items and the lucky wheels. 
-6. as a user, I can view all of the lucky wheel lists I've created in a single list.
-7. as a user, I can use the ramdom number generator to generate numbers randomly.
-8. as a user, I can choose the in terval for the random number generator.
-9. as a user, I can enter the number of numbers I want to generate.
-10. as a user, I can view the activity history if I logged to an exist account. 
+1. As non-registered user, I can register a new account with the site.
+2. As a user, I can log in to the homepage.
+3. As a user, I can create a new lucky wheel template and edit on it.
+4. As a user, I can edit the items' colors and weights.
+5. As a user, I can delete the items and the lucky wheels.
+6. As a user, I can view all of the lucky wheel lists I've created in a single list.
+7. As a user, I can use the ramdom number generator to generate numbers randomly.
+8. As a user, I can choose the interval for the random number generator.
+9. As a user, I can enter the number of numbers I want to generate.
+10. As a user, I can view the activity history if I logged to an exist account. 
 
 ## Research Topics
 <!-- 

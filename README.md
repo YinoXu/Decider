@@ -104,9 +104,10 @@ An Example List with Embedded Items:
 (__TODO__: the research topics that you're planning on working on along with their point values... and the total points of research topics listed) -->
 
 * (6 points) Use a front-end framework
-  * I am going to use react as the frontend framework, react will efficiently update and render just the right components when my data changes. Declarative views make my code more predictable, simpler to understand, and easier to debug.
-* (2 points) Use a CSS framework or UI toolkit, use a reasonable of customization of the framework
+  * I am going to use React as the frontend framework, * React will efficiently update and render just the right components when my data changes. Declarative views make my code more predictable, simpler to be understood, and easier for me to debug it.
+* (2 points) Use a CSS framework or UI toolkit, use a reasonable customization of the framework
   * I am going to use bootstrap as the CSS framework to designe the responsive websites quickly.
+  * Bootstrap is a feature-packed frontend toolkit. It includes HTML and CSS based design templates for typography, forms, etc., and provides a collection of syntax for template designs.
 
 8 points total out of 8 required points.
 

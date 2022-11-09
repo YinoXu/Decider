@@ -33,12 +33,12 @@ app.use(bodyParser.urlencoded({ extended: false }));
 // serve static files
 app.use(express.static(path.join(__dirname, 'public')));
 
-app.get('/', (req, res) => {
-  res.render('index');
-});
+// app.get('/', (req, res) => {
+//   res.render('index');
+// });
 
 //////////////
-const Article = mongoose.model('Article');
+const List = mongoose.model('List');
 
 const loginMessages = {"PASSWORDS DO NOT MATCH": 'Incorrect password', "USER NOT FOUND": 'User doesn\'t exist'};
 const registrationMessages = {"USERNAME ALREADY EXISTS": "Username already exists", "USERNAME PASSWORD TOO SHORT": "Username or password is too short"};
@@ -67,32 +67,31 @@ app.use((req, res, next) => {
 // ROUTE HANDLERS //
 ////////////////////
 app.get('/', (req, res) => {
-  Article.find({}).sort('-createdAt').exec((err, articles) => {
-    res.render('index', {user: req.session.user, home: true, articles: articles});
+  List.find({}).sort('-createdAt').exec((err, list) => {
+    res.render('index', {user: req.session.user, home: true, List: list});
   });
 });
 
-app.get('/article/add', (req, res) => {
+app.get('/List/add', (req, res) => {
   if(!req.session.user){
     res.redirect("/login");
   }
   else{
-    res.render('article-add');
+    res.render('List-add');
   }
 });
 
-app.post('/article/add', (req, res) => {
+app.post('/List/add', (req, res) => {
   // TODO: complete POST /article/add
   if(!req.session.user){
     res.redirect('/login');
   }
   else{
-    const Article = mongoose.model('Article');
-    const a = new Article({
+    const a = new List({
+      name: req.body.name,
       title: req.body.title,
-      url: req.body.url,
-      description: req.body.description,
-      user: req.session.user._id
+      creatAt: req.body.creatAt,
+      description: req.body.description
     });
     a.save((err) => {
       if(!err){
@@ -100,6 +99,7 @@ app.post('/article/add', (req, res) => {
       }
       else{
         res.render('article-add', {message: "NOT SAVED SUCCESSFULLY"});
+        console.log(err);
       }
     });
   }
@@ -107,7 +107,7 @@ app.post('/article/add', (req, res) => {
 
 app.get('/article/:slug', (req, res) => {
   // TODO: complete GET /article/slug
-  Article.findOne({slug: req.params.slug}).populate("user").exec((err, a) => {
+  List.findOne({slug: req.params.slug}).populate("user").exec((err, a) => {
     if(!err){
       res.render('article-detail', {article: a});
     }

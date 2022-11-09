@@ -1,0 +1,23 @@
+<h2>Add new Item</h2>
+{{#if message}}
+<div class="error">{{ message }}</div>
+{{/if}}
+<form method="POST" action="">
+	<div>
+		<label for="user">User:</label>
+		<input type="text" id="user" name="user" value="">
+	</div>
+	<div>
+		<label for="name">Item's Name:</label>
+		<input type="name" id="name" name="name" value="">
+	</div>
+	<div>
+		<label for="createAt">Date:</label>
+		<input type="createAt" id="createAt" name="createAt" value="">
+	</div>
+	<div>
+		<label for="description">Description:</label>
+		<textarea name="description" id="description"></textarea>
+	</div>
+	<input  class="btn btn-success" type="submit" value="Add">
+</form>

@@ -50,21 +50,21 @@
     <div id="outer">
 		<header>
 			<nav>
-                <div class="container">
-                    <button class="btn btn-success"><span class="home-link"><a href="/">Home</a></button> {{#if user}}| <a href="/article/add">Add</a>{{/if}}</span>
-				<span class="login-status">
+				<button class="btn btn-success"><span class="home-link"><a href="/" >Home</a></button> {{#if user}}| <a href="/List/add"><button class="btn btn-success">Add</a>{{/if}}</span>
+				<span class="login-status"></button>
 					{{#if user}}
 					Logged in as: {{user.username}}
 					{{else}}
-					<button class="btn btn-success"><a href="/register">Register</a></button>
+					<button class="btn btn-success"><a href="/register" >Register</a></button>
                     <button class="btn btn-success"><a href="/login">Login</a></button>
 					{{/if}}
 				</span>
-                </div>
 			</nav>
 		</header>
 
+		<h1>Too Long; Didn't Read</h1>
 		<div class="content">
+			A link aggregation site. Kind of like a terrible version of another site whose name rhymes with "Fed it.".
 			{{{ body }}}
 		</div>
 	</div>

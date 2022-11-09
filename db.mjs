@@ -32,8 +32,8 @@ const Item = new mongoose.Schema({
 const List = new mongoose.Schema({
   user: {type: mongoose.Schema.Types.ObjectId, ref:'User'},
   name: {type: String, required: true},
-  createdAt: {type: Date, required: true},
-  items: [Item]
+  createdAt: {type: Date, required: false},
+  description: String
 });
 
 // TODO: add remainder of setup for slugs, connection, registering models, etc. below
@@ -58,5 +58,6 @@ if (process.env.NODE_ENV === 'PRODUCTION') {
  dbconf = 'mongodb://localhost/YOUR_DATABASE_NAME_HERE';
 }
 mongoose.model("User", User);
-mongoose.model("Article", List);
+mongoose.model("List", List);
+mongoose.model("item",Item);
 mongoose.connect(dbconf);

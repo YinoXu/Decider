@@ -1,0 +1,19 @@
+<h2>Add new Item</h2>
+{{#if message}}
+<div class="error">{{ message }}</div>
+{{/if}}
+<form method="POST" action="">
+	<div>
+		<label for="title">Title:</label>
+		<input type="text" id="title" name="title" value="">
+	</div>
+	<div>
+		<label for="title">URL:</label>
+		<input type="url" id="url" name="url" value="">
+	</div>
+	<div>
+		<label for="description">Description:</label>
+		<textarea name="description" id="description"></textarea>
+	</div>
+	<input type="submit" value="Add">
+</form>

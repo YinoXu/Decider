@@ -8,7 +8,10 @@ import mongoose from 'mongoose';
 const User = new mongoose.Schema({
   // username provided by authentication plugin
   // password hash provided by authentication plugin
-  lists:  [{ type: mongoose.Schema.Types.ObjectId, ref: 'List' }]
+    username: String,
+    email: String,
+    password:{type: String, unique: true, required: true},
+    lists:  [{ type: mongoose.Schema.Types.ObjectId, ref: 'List' }]
 });
 
 // an item (or group of the same items) in a grocery list
@@ -34,3 +37,26 @@ const List = new mongoose.Schema({
 });
 
 // TODO: add remainder of setup for slugs, connection, registering models, etc. below
+
+import fs from 'fs';
+import path from 'path';
+import url from 'url';
+const __dirname = path.dirname(url.fileURLToPath(import.meta.url));
+let dbconf;
+if (process.env.NODE_ENV === 'PRODUCTION') {
+ // if we're in PRODUCTION mode, then read the configration from a file
+ // use blocking file io to do this...
+ const fn = path.join(__dirname, '..' , 'config.json');
+ const data = fs.readFileSync(fn);
+
+ // our configuration file will be in json, so parse it and set the
+ // conenction string appropriately!
+ const conf = JSON.parse(data);
+ dbconf = conf.dbconf;
+} else {
+ // if we're not in PRODUCTION mode, then use
+ dbconf = 'mongodb://localhost/YOUR_DATABASE_NAME_HERE';
+}
+mongoose.model("User", User);
+mongoose.model("Article", List);
+mongoose.connect(dbconf);

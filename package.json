@@ -17,6 +17,8 @@
   },
   "homepage": "https://github.com/nyu-csci-ua-0467-001-002-fall-2022/final-project-YinoXu#readme",
   "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "bootstrap": "^5.2.2",
     "express": "^4.18.2",
     "express-session": "^1.17.3",
     "hbs": "^4.2.0",

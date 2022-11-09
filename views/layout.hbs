@@ -4,9 +4,69 @@
 <meta charset="utf-8">
 <title></title>
 <link rel="stylesheet" href="/css/base.css" type="text/css" media="screen" title="no title" charset="utf-8">
+<link rel="stylesheet" href="/views/style.css"/>
+<!-- CSS only -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+<!-- JavaScript Bundle with Popper -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
+
 </head>
+<style>
+    nav{
+        padding: 1em;
+        text-decoration: none; /* no underline */
+        background-color: #8ef6d5; /* pale bluish white */
+        color: #4312AE; /* dark blue */
+        border: none;
+        border-top-left-radius: 1em 1em; /* rounded corner! */
+        border-top-right-radius: 1em 1em; /* another rounded corner! */
+        border-bottom-left-radius: 1em 1em; /* rounded corner! */
+        border-bottom-right-radius: 1em 1em; /* another rounded corner! */
+
+    }
+    a:link, a:visited {
+        color: black;
+        padding: 10px 20px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        }
+
+    a:hover, a:active {
+        color: white;
+    }  
+
+    .container {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+    }
+
+
+</style>
 <body>
-	<h1>Decider</h1>
-    {{{ body }}}
+	<center><h1>Welcome to Decider!</h1></center>
+    <div id="outer">
+		<header>
+			<nav>
+                <div class="container">
+                    <button class="btn btn-success"><span class="home-link"><a href="/">Home</a></button> {{#if user}}| <a href="/article/add">Add</a>{{/if}}</span>
+				<span class="login-status">
+					{{#if user}}
+					Logged in as: {{user.username}}
+					{{else}}
+					<button class="btn btn-success"><a href="/register">Register</a></button>
+                    <button class="btn btn-success"><a href="/login">Login</a></button>
+					{{/if}}
+				</span>
+                </div>
+			</nav>
+		</header>
+
+		<div class="content">
+			{{{ body }}}
+		</div>
+	</div>
 </body>
 </html>

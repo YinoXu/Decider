@@ -75,17 +75,17 @@ An Example List with Embedded Items:
 /random - page for random number generator
 
 ![list](documentation/random.png)
-![list](documentation/result.png)
+![list](documentation/results.png)
 
 /add/list - page to add items to lucky wheel
-![list](documentation/random.png)
+![list](documentation/add.png)
 
 /luckywheel - page for lucky wheel
 
 Lucky wheel with registered account:
 ![list](documentation/registered.png)
 Lucky wheel without register:
-![list](documentation/Luckywheel.png)
+![list](documentationluckywheel.png)
 
 
 ## Site map

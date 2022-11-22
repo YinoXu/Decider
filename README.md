@@ -84,6 +84,7 @@ An Example List with Embedded Items:
 
 Lucky wheel with registered account:
 ![list](documentation/registered.png)
+
 Lucky wheel without register:
 ![list](documentation/luckywheel.png)
 

@@ -60,21 +60,33 @@ An Example List with Embedded Items:
 <!-- 
 (__TODO__: wireframes for all of the pages on your site; they can be as simple as photos of drawings or you can use a tool like Balsamiq, Omnigraffle, etc.) -->
 
-/intro - the home page
+/ - the home page
 
 ![list create](documentation/Introduction.png)
 
-/intro/luckywheel - page for showing the lucky wheel
+/register - page to register
 
-![list](documentation/LuckyWheel.png)
+![list](documentation/register.png)
 
-/intro/luckywheel/templates
+/login - page to login
 
-![list](documentation/templates.png)
+![list](documentation/login.png)
 
-/intro/genertator - page for showing the Ramdom Number Generator
+/random - page for random number generator
 
-![list](documentation/Generator.png)
+![list](documentation/random.png)
+![list](documentation/result.png)
+
+/add/list - page to add items to lucky wheel
+![list](documentation/random.png)
+
+/luckywheel - page for lucky wheel
+
+Lucky wheel with registered account:
+![list](documentation/registered.png)
+Lucky wheel without register:
+![list](documentation/Luckywheel.png)
+
 
 ## Site map
 
@@ -91,13 +103,11 @@ An Example List with Embedded Items:
 1. As non-registered user, I can register a new account with the site.
 2. As a user, I can log in to the homepage.
 3. As a user, I can create a new lucky wheel template and edit on it.
-4. As a user, I can edit the items' colors and weights.
-5. As a user, I can delete the items and the lucky wheels.
-6. As a user, I can view all of the lucky wheel lists I've created in a single list.
-7. As a user, I can use the ramdom number generator to generate numbers randomly.
-8. As a user, I can choose the interval for the random number generator.
-9. As a user, I can enter the number of numbers I want to generate.
-10. As a user, I can view the activity history if I logged to an exist account. 
+4. As a user, I can delete the items and the lucky wheels.
+5. As a user, I can view all of the lucky wheel lists I've created in a single list.
+6. As a user, I can use the ramdom number generator to generate numbers randomly.
+7. As a user, I can choose the interval for the random number generator.
+8. As a user, I can enter the number of numbers I want to generate.
 
 ## Research Topics
 <!-- 

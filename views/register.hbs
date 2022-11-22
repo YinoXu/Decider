@@ -2,9 +2,14 @@
 {{#if message}}
 <div class="error">{{ message }}</div>
 {{/if}}
+<!-- CSS only -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
 <!-- JavaScript Bundle with Popper -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
-<form method="POST" action="register">
+<!-- JavaScript Bundle with Popper -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
+<div class="form-floating mb-3">
+  <form method="POST" action="register">
 	<div>
 		<label for="username">Username:</label>
 		<input type="text" name="username" value="">
@@ -18,7 +23,9 @@
 		<input type="password" name="password" value="">
 	</div>
 	<div><input type="submit" value="Register"></div>
-</form>
+  </form>
+</div>
+
 <br>
 <center><h3>The Following Are Some Insructions to Use Decider</h3></center>
 <p> Have a hard time making choices?  You can add your choices or tasks, which will be arranged equally into a "lucky wheel". You can also use the Random Number Genertaor to randomly generate the number in a specific interval. Start by creating an account and feel free to check all lists you’ve created! 😍</p>

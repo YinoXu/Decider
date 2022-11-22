@@ -94,7 +94,7 @@ Lucky wheel without register:
 
 <!-- Here's a [complex example from wikipedia](https://upload.wikimedia.org/wikipedia/commons/2/20/Sitemap_google.jpg), but you can create one without the screenshots, drop shadows, etc. ... just names of pages and where they flow to. -->
 
-![list create](documentation/sitemap.png)
+![list create](documentation/sitemap.jpg)
 
 ## User Stories or Use Cases
 

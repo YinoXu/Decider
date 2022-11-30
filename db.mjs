@@ -1,5 +1,5 @@
 // 1ST DRAFT DATA MODEL
-import mongoose from 'mongoose';
+import mongoose from "mongoose";
 
 // users
 // * our site requires authentication...
@@ -8,39 +8,40 @@ import mongoose from 'mongoose';
 const User = new mongoose.Schema({
   // username provided by authentication plugin
   // password hash provided by authentication plugin
-    username: String,
-    email: String,
-    password:{type: String, unique: true, required: true},
-    lists:  [{ type: mongoose.Schema.Types.ObjectId, ref: 'List' }]
+  username: String,
+  email: String,
+  password: { type: String, unique: true, required: true },
+  lists: [{ type: mongoose.Schema.Types.ObjectId, ref: "List" }],
 });
 
 // an item (or group of the same items) in a grocery list
-// * includes the quantity of this item (multiple of the same item does not 
+// * includes the quantity of this item (multiple of the same item does not
 //   require additional Item documents; just increase the quantity!)
 // * items in a list can be crossed off
-const Item = new mongoose.Schema({
-  name: {type: String, required: true},
-  weight: {type: Number, min: 0, required: true},
-  color: {type: String, default: 'white', required: true}
-}, {
-  _id: true
-});
+const Item = new mongoose.Schema(
+  {
+    name: { type: String, required: true },
+    weight: { type: Number, min: 0, required: true },
+    color: { type: String, default: "white", required: true },
+  },
+  {
+    _id: true,
+  }
+);
 
 // a grocery list
 // * each list must have a related user
 // * a list can have 0 or more items
 const List = new mongoose.Schema({
-  user: {type: mongoose.Schema.Types.ObjectId, ref:'User'},
-  name: {type: String, required: true},
-  createdAt: {type: Date, required: false},
-  description: String
+  user: { type: String, required: true },
+  name: { type: String, required: true },
 });
 
 // TODO: add remainder of setup for slugs, connection, registering models, etc. below
 
-import fs from 'fs';
-import path from 'path';
-import url from 'url';
+import fs from "fs";
+import path from "path";
+import url from "url";
 const __dirname = path.dirname(url.fileURLToPath(import.meta.url));
 // let dbconf;
 // if (process.env.NODE_ENV === 'PRODUCTION') {
@@ -59,5 +60,5 @@ const __dirname = path.dirname(url.fileURLToPath(import.meta.url));
 // }
 mongoose.model("User", User);
 mongoose.model("List", List);
-mongoose.model("item",Item);
+mongoose.model("item", Item);
 mongoose.connect("mongodb://localhost/finalproject");

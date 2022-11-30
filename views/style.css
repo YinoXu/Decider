@@ -7,7 +7,7 @@ body {
   display: grid;
   place-items: center;
   min-height: 100vh;
-  font-family: 'Poppins', sans-serif;
+  font-family: "Poppins", sans-serif;
   background-color: #eee;
   transition: background-color 0.35s ease-in-out;
 }
@@ -22,9 +22,10 @@ body {
 
 .box {
   position: relative;
+  margin: auto;
 }
 
-button {
+/* button {
   position: absolute;
   top: 50%;
   left: 50%;
@@ -41,7 +42,7 @@ button {
 
   cursor: pointer;
   background-color: #fff;
-}
+} */
 
 .author {
   font-size: 14px;
@@ -52,4 +53,11 @@ button {
 .author a {
   color: blue;
   text-decoration: none;
+}
+
+th, td {
+  padding-top: 10px;
+  padding-bottom: 20px;
+  padding-left: 30px;
+  padding-right: 40px;
 }

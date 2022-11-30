@@ -1,4 +1,5 @@
-<h2>Register</h2>
+<br>
+<center><h2>Register</h2></center>
 {{#if message}}
 <div class="error">{{ message }}</div>
 {{/if}}
@@ -29,25 +30,29 @@
 <div class="form-floating mb-3">
   <form method="POST" action="register">
     <div class="form-floating">
-		<input type="text" name="username" value="" class="form-control" id="floatingInputGroup1" placeholder="Username" >
-		<label for="floatingInputGroup1">Username:</label>
+      <input type="text" name="username" value="" class="form-control" id="floatingInputGroup1" placeholder="Username" >
+      <label for="floatingInputGroup1">Username:</label>
     </div>
    <div class="form-floating mb-3">
-  <input type="email" name="email" class="form-control" id="floatingInput" placeholder="name@example.com">
-  <label for="floatingInput">Email address</label>
-</div>
-<div class="form-floating">
-  <input type="password" name="password" class="form-control" id="floatingPassword" placeholder="Password">
-  <label for="floatingPassword">Password</label>
-</div>
-	<div><input type="submit" value="Register"></div>
+      <input type="email" name="email" class="form-control" id="floatingInput" placeholder="name@example.com">
+      <label for="floatingInput">Email address:</label>
+   </div>
+  <div class="form-floating">
+      <input type="password" name="password" class="form-control" id="floatingPassword" placeholder="Password">
+      <label for="floatingPassword">Password:</label>
+  </div>
+  <br>
+	<div><input class="btn btn-success" type="submit" value="Register"></div>
   </form>
  
 </div>
 
 <br>
 <center><h3>The Following Are Some Insructions to Use Decider</h3></center>
-<p> Have a hard time making choices?  You can add your choices or tasks, which will be arranged equally into a "lucky wheel". You can also use the Random Number Genertaor to randomly generate the number in a specific interval. Start by creating an account and feel free to check all lists you’ve created! 😍</p>
+<p>Have a hard time making choices? You can add your choices or tasks as many as you want to the list table. The Selector will help you to select from the list table ramdomly!
+<br>
+You can use the Random Number Genertaor to randomly generate the number in a specific interval!
+</p>
 
 <div class="accordion" id="accordionExample">
   <div class="accordion-item">
@@ -58,7 +63,7 @@
     </h2>
     <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
       <div class="accordion-body">
-       <strong>Create an account or login to the existed account</strong>
+       <strong>Create an account or login to the existed account.</strong>
       </div>
     </div>
   </div>
@@ -71,7 +76,7 @@
     <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
       <div class="accordion-body">
         <strong>
-             a. Create a new lucky wheel: feel free to change the color, add, and delete each items.
+            a. Selector: feel free to add itmes to the list table and ask the Seletor to select some of them ramdomly.
         <br>
             b. Ramdom Number Generator: set an interval and generate the number randomly.
         </strong>
@@ -86,7 +91,7 @@
     </h2>
     <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordionExample">
       <div class="accordion-body">
-        <strong>Feel free to check the lists create by your account and review the history.
+        <strong>Feel free to check the result.
       </div>
     </div>
   </div>

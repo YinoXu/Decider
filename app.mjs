@@ -18,6 +18,28 @@ const io = new Server(server);
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
+export const sort = (minus, minVlaue, maxValue) => {
+  const arr = Array(0);
+  if(minus(minVlaue, maxValue) > 0){
+      arr.push(maxValue);
+      arr.push(minVlaue);
+  }
+  else{
+      arr.push(minVlaue);
+      arr.push(maxValue);
+  }
+  return arr;
+};
+
+export const minus = (v1, v2) => {
+  return v1-v2;
+};
+
+
+export const calculateNum = (max, min) => {
+  return Math.floor(Math.random() * (max - min + 1)) + min;
+};
+
 // enable sessions
 const sessionOptions = {
   secret: "secret cookie thang (store this elsewhere!)",
@@ -129,19 +151,28 @@ app.get("/random", (req, res) => {
 });
 
 app.post("/random", (req, res) => {
-  let minValue = Number(req.body.upperbond);
-  let maxValue = Number(req.body.lowerbond);
+  let minValue = Number(req.body.lowerbond);
+  let maxValue = Number(req.body.upperbond);
   const number = Number(req.body.number);
-  if (minValue > maxValue) {
-    minValue = maxValue;
-    maxValue = minValue;
+
+  const arr = sort(minus,minValue, maxValue);
+  minValue = arr[0];
+  maxValue = arr[1];
+
+  // const result = [];
+
+  const temp = new Array(number);
+  for (let i = 0; i < number; i++){
+    temp.push(0);
   }
-  const result = [];
-  for (let i = 0; i < number; i++) {
-    result.push(
-      Math.floor(Math.random() * (maxValue - minValue + 1)) + minValue
-    );
-  }
+  const result = temp.map(() => calculateNum(minValue,maxValue));
+
+
+  // for (let i = 0; i < number; i++) {
+  //   result.push(
+  //     calculateNum(minValue,maxValue)
+  //   );
+  // }
   res.render("randomresult", { result: result, show: true });
 });
 
@@ -198,13 +229,24 @@ app.post("/register", (req, res) => {
 });
 
 app.get("/changepassword", (req, res) => {
-  res.render("changepassword");
+  res.render("changepassword",{show: true});
 });
 
 app.post('/changepassword', function (req, res) {
   if (!req.session.user) {
     res.redirect("/login");
-  } else if (req.body.newpassword.length < 8){
+  }
+  // unit test
+  // else{
+  //   const error = (message) => {
+  //     console.log(message);
+  //     res.render("changepassword", {
+  //       message: message
+  //     });
+  //   };
+  //   changepassword(req.body.newpassword);
+  // }
+  else if (req.body.newpassword.length < 8){
     console.log("USERNAME PASSWORD TOO SHORT");
     res.render("changepassword", {
       message: "USERNAME PASSWORD TOO SHORT"

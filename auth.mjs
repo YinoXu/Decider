@@ -5,6 +5,51 @@ import mongoose from 'mongoose';
 // assumes that User was registered in `./db.mjs`
 const User = mongoose.model('User');
 
+
+// unit test
+// const changepassword=(newpassword, error)=>{
+//   if (newpassword.length < 8){
+//     error("USERNAME PASSWORD TOO SHORT");
+//   }
+//   else{
+//     User.findOne({username: req.body.username}).exec((err, user) => {
+//       if (err) {
+//         error("FINDONE ERROR");
+//       }
+//       if(user === null){
+//         error("CANNOT FIND USER");
+//       }
+//        else {
+//         bcrypt.compare(req.body.oldpassword, user.password, (err, passwordMatch) => {
+//           // regenerate session if passwordMatch is true
+//           if(err){
+//             console.log("PASSWORD FIND ERROR");
+//           }
+//           else if(!passwordMatch){
+//             console.log("PASSWORDS DO NOT MATCH");
+//           }
+//           else{
+//             bcrypt.hash(req.body.newpassword, 10, function(err, hashedNew) {
+//               if (err){
+//                 console.log(err);
+//               }else{
+//                 user.password = hashedNew;
+//                 user.save(function(err2){
+//                   if(err2){
+//                     console.log("err2");
+//                     res.send(err2);
+//                   }
+//                 });
+//                 res.redirect("/");
+//               }
+//             });
+//           }
+//          });
+//       }
+//     });
+//   }
+// };
+
 const startAuthenticatedSession = (req, user, cb) => {
   // TODO: implement startAuthenticatedSession
   // assuming that user is the user retrieved from the database
@@ -116,5 +161,6 @@ export {
   endAuthenticatedSession,
   register,
   login,
-  authRequired
+  authRequired,
+  // changepassword
 };

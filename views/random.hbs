@@ -9,12 +9,12 @@
   <body>
     <form method="POST" action="random">
 	<div>
-		<label for="upperbond">Lowerbond:</label>
-		<input type="number" name="upperbond" value="">
+		<label for="lowerbond">Lowerbond:</label>
+		<input type="number" name="lowerbond" value="">
 	</div>
 	<div>
-		<label for="lowerbond">Upperbond:</label> 
-		<input type="number" name="lowerbond" value="">
+		<label for="upperbond">Upperbond:</label> 
+		<input type="number" name="upperbond" value="">
 	</div>
 	<div>
 		<label for="number">Number:</label>
@@ -22,27 +22,6 @@
 	</div>
 	<div><input type="submit" value="Generate"></div>
 </form>
-    <!-- Script -->
-    <script>
-        const generateBtn = document.getElementById("generate");
-        function randomNum() {
-        console.log("ENTER!!");
-        const min = document.getElementById("min");
-        const max = document.getElementById("max");
-        let minValue = Number(min.value);
-        let maxValue = Number(max.value);
-        if (minValue > maxValue) {
-            minValue = maxValue + minValue;
-            maxValue = minValue - maxValue;
-            minValue = minValue - maxValue;
-            min.value = minValue;
-            max.value = maxValue;
-        }
-        const num = Math.floor(Math.random() * (maxValue - minValue + 1)) + minValue;
-        document.getElementById("result").innerText = num;
-        }
-        window.addEventListener("load", randomNum());
-        generateBtn.addEventListener("click", randomNum);
-    </script>
   </body>
 </html>
+

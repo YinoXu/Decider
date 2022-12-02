@@ -4,7 +4,7 @@
   "description": "The content below is an example project proposal / requirements document. Replace the text below the lines marked \"__TODO__\" with details specific to your project. Remove the \"TODO\" lines.",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "mocha"
   },
   "repository": {
     "type": "git",
@@ -26,12 +26,18 @@
     "hbs": "^4.2.0",
     "http": "^0.0.1-security",
     "mongoose": "^6.7.0",
+    "node-sass": "^8.0.0",
     "nodemon": "^2.0.20",
     "passport": "^0.6.0",
     "path": "^0.12.7",
+    "sass-loader": "^13.2.0",
     "socket.io": "^4.5.4",
     "url": "^0.11.0",
     "vue-fortune-wheel": "^1.0.3"
   },
-  "keywords": []
+  "keywords": [],
+  "devDependencies": {
+    "chai": "^4.3.7",
+    "mocha": "^10.1.0"
+  }
 }

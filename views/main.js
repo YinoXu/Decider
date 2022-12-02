@@ -27,8 +27,16 @@ function select() {
 
 socket.on("sendData", (data) => {
   // console.log(data);
-  data.forEach((ele) => {
-    list.push(ele.name);
+  // data.forEach((ele) => {
+  //   list.push(ele.name);
+  // });
+  const newStuff = data.reduce((output, ele) => {
+    output.push(ele.name);
+    return output;
+  }, []);
+  // newStuff = newStuff.filter((ele) => !list.includes(ele));
+  newStuff.forEach((ele) => {
+    list.push(ele);
   });
 });
 

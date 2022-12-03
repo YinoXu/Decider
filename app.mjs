@@ -344,9 +344,9 @@ io.on("connection", (socket) => {
   });
 });
 
-// app.listen(process.env.PORT || 3000);
-const port = process.env.envPORT;
-const host = process.env.envHOST;
-server.listen(port, host, () => {
-  console.log(`Server is listening ${host}:${port}`);
-});
+app.listen(process.env.PORT || 3000);
+// const port = process.env.envPORT;
+// const host = process.env.envHOST;
+// server.listen(port, host, () => {
+//   console.log(`Server is listening ${host}:${port}`);
+// });

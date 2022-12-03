@@ -31,6 +31,7 @@
     "passport": "^0.6.0",
     "path": "^0.12.7",
     "sass-loader": "^13.2.0",
+    "selenium-webdriver": "^4.7.0",
     "socket.io": "^4.5.4",
     "url": "^0.11.0",
     "vue-fortune-wheel": "^1.0.3"

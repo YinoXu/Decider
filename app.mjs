@@ -98,7 +98,7 @@ app.use((req, res, next) => {
   next();
 });
 
-app.use(auth.authRequired(["/luckywheel", "/", "/random"]));
+app.use(auth.authRequired(["/luckywheel", "/", "/random","/changepassword"]));
 
 ////////////////////
 // ROUTE HANDLERS //
@@ -321,8 +321,6 @@ app.post("/login", (req, res) => {
   // attempt to login
   auth.login(req.body.username, req.body.password, error, success);
 });
-const port = process.env.PORT;
-const host = process.env.HOST;
 
 io.on("connection", (socket) => {
   socket.on("gettingData", () => {
@@ -347,7 +345,8 @@ io.on("connection", (socket) => {
 });
 
 // app.listen(process.env.PORT || 3000);
-
+const port = process.env.envPORT;
+const host = process.env.envHOST;
 server.listen(port, host, () => {
   console.log(`Server is listening ${host}:${port}`);
 });

@@ -1,6 +1,7 @@
 // 1ST DRAFT DATA MODEL
 import mongoose from "mongoose";
-
+import * as dotenv from "dotenv";
+dotenv.config();
 // users
 // * our site requires authentication...
 // * so users have a username and password
@@ -61,4 +62,4 @@ const __dirname = path.dirname(url.fileURLToPath(import.meta.url));
 mongoose.model("User", User);
 mongoose.model("List", List);
 mongoose.model("item", Item);
-mongoose.connect("mongodb://localhost/finalproject");
+mongoose.connect(process.env.envDB);

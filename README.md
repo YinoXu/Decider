@@ -56,7 +56,7 @@ An Example List with Embedded Items:
 
 / - the home page
 
-![list create](documentation/Introduction.png)
+![list create](documentation/home.png)
 
 /register - page to register
 
@@ -71,16 +71,13 @@ An Example List with Embedded Items:
 ![list](documentation/random.png)
 ![list](documentation/results.png)
 
-/add/list - page to add items to lucky wheel
-![list](documentation/add.png)
+/luckywheel - page to add items to selector
+![list](documentation/selector.png)
 
-/luckywheel - page for lucky wheel
+/changepassword - page for changing password
 
-Lucky wheel with registered account:
-![list](documentation/registered.png)
+![list](documentation/changepassword.png)
 
-Lucky wheel without register:
-![list](documentation/LuckyWheel.png)
 
 
 ## Site map
@@ -116,12 +113,19 @@ Lucky wheel without register:
   * Bootstrap is a feature-packed frontend toolkit. It includes HTML and CSS based design templates for typography, forms, etc., and provides a collection of syntax for template designs.
 * (3 points) Unit testing with JavaScript
   * I used mocha as the unit test to test some of my functions and show 4 test results. Please see the screenshot blow.
+  Unit test:
+  ![list](documentation/unittest.pic.jpg)
 * (5 points) Automated functional testing for all of my routes using Selenium
   * I used selenium to test my code automatically. The screenshot of four test processes and results are posted below.
+  ![list](documentation/test1.pic.jpg)
+  ![list](documentation/test2.pic.jpg)
+
 * (3 points) Configuration management
   * I used dotenv to automatically loads environment variables from a . env file.
 * (3 points) Use built tools / task runners such as vite, Webpack or even make (!) to automate any of the following … must be used in combination with one or more of the other requirements, such as:Use a CSS preprocesser Sass
   * I created a webpack.config.js file in webpack folder in order to automate the sass
+![list](documentation/sass1.png)
+![list](documentation/sass2.png)
 
 
 13-16 points total out of 10 required points.

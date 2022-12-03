@@ -142,4 +142,9 @@ An Example List with Embedded Items:
 1. [tutorial on React](https://github.com/facebook/react)
 2. [UI toolkit Documentation](https://docs.unity3d.com/Manual/UIElements.html)
 3. [tutorial on bootstrap](https://getbootstrap.com/)
+4. [Mocha] (https://www.youtube.com/watch?v=MLTRHc5dk6s&t=308s)
+5. [Selenium] (https://www.youtube.com/watch?v=j7VZsCCnptM)
+6. [sass] (https://www.youtube.com/watch?v=jUZzAUuMHVI)
+7. [dotenv] (https://www.youtube.com/watch?v=hZUNMYU4Kzo)
+
 

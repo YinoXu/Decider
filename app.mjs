@@ -9,7 +9,7 @@ import bodyParser from "body-parser";
 import * as auth from "./auth.mjs";
 import mongoose from "mongoose";
 import * as dotenv from "dotenv";
-import bcrypt from 'bcryptjs';
+import bcrypt from "bcryptjs";
 dotenv.config();
 
 const app = express();
@@ -20,21 +20,19 @@ const __dirname = path.dirname(__filename);
 
 export const sort = (minus, minVlaue, maxValue) => {
   const arr = Array(0);
-  if(minus(minVlaue, maxValue) > 0){
-      arr.push(maxValue);
-      arr.push(minVlaue);
-  }
-  else{
-      arr.push(minVlaue);
-      arr.push(maxValue);
+  if (minus(minVlaue, maxValue) > 0) {
+    arr.push(maxValue);
+    arr.push(minVlaue);
+  } else {
+    arr.push(minVlaue);
+    arr.push(maxValue);
   }
   return arr;
 };
 
 export const minus = (v1, v2) => {
-  return v1-v2;
+  return v1 - v2;
 };
-
 
 export const calculateNum = (max, min) => {
   return Math.floor(Math.random() * (max - min + 1)) + min;
@@ -98,7 +96,7 @@ app.use((req, res, next) => {
   next();
 });
 
-app.use(auth.authRequired(["/luckywheel", "/", "/random","/changepassword"]));
+app.use(auth.authRequired(["/luckywheel", "/", "/random", "/changepassword"]));
 
 ////////////////////
 // ROUTE HANDLERS //
@@ -155,18 +153,17 @@ app.post("/random", (req, res) => {
   let maxValue = Number(req.body.upperbond);
   const number = Number(req.body.number);
 
-  const arr = sort(minus,minValue, maxValue);
+  const arr = sort(minus, minValue, maxValue);
   minValue = arr[0];
   maxValue = arr[1];
 
   // const result = [];
 
   const temp = new Array(number);
-  for (let i = 0; i < number; i++){
+  for (let i = 0; i < number; i++) {
     temp.push(0);
   }
-  const result = temp.map(() => calculateNum(minValue,maxValue));
-
+  const result = temp.map(() => calculateNum(minValue, maxValue));
 
   // for (let i = 0; i < number; i++) {
   //   result.push(
@@ -229,10 +226,10 @@ app.post("/register", (req, res) => {
 });
 
 app.get("/changepassword", (req, res) => {
-  res.render("changepassword",{show: true});
+  res.render("changepassword", { show: true });
 });
 
-app.post('/changepassword', function (req, res) {
+app.post("/changepassword", function (req, res) {
   if (!req.session.user) {
     res.redirect("/login");
   }
@@ -246,55 +243,53 @@ app.post('/changepassword', function (req, res) {
   //   };
   //   changepassword(req.body.newpassword);
   // }
-  else if (req.body.newpassword.length < 8){
+  else if (req.body.newpassword.length < 8) {
     console.log("USERNAME PASSWORD TOO SHORT");
     res.render("changepassword", {
-      message: "USERNAME PASSWORD TOO SHORT"
+      message: "USERNAME PASSWORD TOO SHORT",
     });
-  }
-  else{
-    User.findOne({username: req.body.username}).exec((err, user) => {
+  } else {
+    User.findOne({ username: req.body.username }).exec((err, user) => {
       if (err) {
-          res.send(err);
+        res.send(err);
       }
-      if(user === null){
+      if (user === null) {
         console.log("CANNOT FIND USER");
         res.render("changepassword", {
-          message: "CANNOT FIND USER"
+          message: "CANNOT FIND USER",
         });
+      } else {
+        bcrypt.compare(
+          req.body.oldpassword,
+          user.password,
+          (err, passwordMatch) => {
+            // regenerate session if passwordMatch is true
+            if (err) {
+              console.log("PASSWORD FIND ERROR");
+            } else if (!passwordMatch) {
+              console.log("PASSWORDS DO NOT MATCH");
+            } else {
+              bcrypt.hash(req.body.newpassword, 10, function (err, hashedNew) {
+                if (err) {
+                  console.log(err);
+                } else {
+                  user.password = hashedNew;
+                  user.save(function (err2) {
+                    if (err2) {
+                      console.log("err2");
+                      res.send(err2);
+                    }
+                  });
+                  res.redirect("/");
+                }
+              });
+            }
+          }
+        );
       }
-       else {
-        bcrypt.compare(req.body.oldpassword, user.password, (err, passwordMatch) => {
-          // regenerate session if passwordMatch is true
-          if(err){
-            console.log("PASSWORD FIND ERROR");
-          }
-          else if(!passwordMatch){
-            console.log("PASSWORDS DO NOT MATCH");
-          }
-          else{
-            bcrypt.hash(req.body.newpassword, 10, function(err, hashedNew) {
-              if (err){
-                console.log(err);
-              }else{
-                user.password = hashedNew;
-                user.save(function(err2){
-                  if(err2){
-                    console.log("err2");
-                    res.send(err2);
-                  }
-                });
-                res.redirect("/");
-              }
-            });
-          }
-         });
-      }
-  });
+    });
   }
 });
-
-
 
 app.get("/login", (req, res) => {
   res.render("login");
@@ -344,6 +339,7 @@ io.on("connection", (socket) => {
   });
 });
 
+console.log(process.env.PORT);
 app.listen(process.env.PORT || 3000);
 // const port = process.env.envPORT;
 // const host = process.env.envHOST;

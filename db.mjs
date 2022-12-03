@@ -45,21 +45,22 @@ import path from "path";
 import url from "url";
 const __dirname = path.dirname(url.fileURLToPath(import.meta.url));
 let dbconf;
-if (process.env.NODE_ENV === 'PRODUCTION') {
- // if we're in PRODUCTION mode, then read the configration from a file
- // use blocking file io to do this...
- const fn = path.join(__dirname, 'config.json');
- const data = fs.readFileSync(fn);
+if (process.env.NODE_ENV === "PRODUCTION") {
+  // if we're in PRODUCTION mode, then read the configration from a file
+  // use blocking file io to do this...
+  const fn = path.join(__dirname, "config.json");
+  const data = fs.readFileSync(fn);
 
- // our configuration file will be in json, so parse it and set the
- // conenction string appropriately!
- const conf = JSON.parse(data);
- dbconf = conf.dbconf;
+  // our configuration file will be in json, so parse it and set the
+  // conenction string appropriately!
+  const conf = JSON.parse(data);
+  dbconf = conf.dbconf;
 } else {
- // if we're not in PRODUCTION mode, then use
- dbconf = 'mongodb://localhost/YOUR_DATABASE_NAME_HERE';
+  // if we're not in PRODUCTION mode, then use
+  dbconf = "mongodb://localhost/YOUR_DATABASE_NAME_HERE";
 }
 mongoose.model("User", User);
 mongoose.model("List", List);
 mongoose.model("item", Item);
+console.log(dbconf);
 mongoose.connect(dbconf);

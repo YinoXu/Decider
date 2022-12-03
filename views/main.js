@@ -10,7 +10,7 @@ function addItem() {
     list.push(value);
     document.querySelector(".item").value = "";
     document.querySelector(".username").value = currentUser;
-    const p = document.createElement("p");
+    const p = document.createElement("li");
     p.textContent = username + ": " + value;
     document.querySelector(".list").appendChild(p);
     const data = { username, value };

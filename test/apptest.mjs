@@ -27,13 +27,26 @@ describe("Sort", function () {
 });
 
 describe("selenium", function () {
-  it("first test", async function () {
-    let driver = await new Builder().forBrowser("firefox").build();
-
+  it("Add a new item", async function () {
+    const driver = await new Builder().forBrowser("firefox").build();
+    //login
     await driver.get("http://localhost:3000/");
     await driver.findElement(By.id('floatingInputGroup1')).sendKeys("88888888");
     await driver.findElement(By.id('floatingPassword')).sendKeys('88888888');
     await driver.findElement(By.id('login')).click();
+
+    //Add item
+    await driver.findElement(By.id('selector')).click();
+    await driver.findElement(By.id('item')).sendKeys("ricenoodle");
+    await driver.findElement(By.id('add')).click();
+
+    //friends
+    const compareText = await driver.findElement(By.xpath('//li[last()]')).getText().then(function(value){
+      return value;
+    });
+    assert.equal(compareText, "88888888: ricenoodle");
+
+    
   });
 
 

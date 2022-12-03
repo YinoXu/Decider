@@ -17,6 +17,12 @@ const server = createServer(app);
 const io = new Server(server);
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
+app.use(express.static(path.join(__dirname, "public")));
+
+app.set("view engine", "hbs");
+
+// body parser setup
+app.use(bodyParser.urlencoded({ extended: false }));
 
 export const sort = (minus, minVlaue, maxValue) => {
   const arr = Array(0);
@@ -47,18 +53,13 @@ const sessionOptions = {
 app.use(session(sessionOptions));
 
 // app.mjs
-const directory = path.dirname(fileURLToPath(import.meta.url));
-app.use(express.static(path.join(directory, "views")));
+// const directory = path.dirname(fileURLToPath(import.meta.url));
+// app.use(express.static(path.join(directory, "views")));
 
 // view engine setup
-app.set("views", path.join(__dirname, "views"));
-app.set("view engine", "hbs");
-
-// body parser setup
-app.use(bodyParser.urlencoded({ extended: false }));
+// app.set("views", path.join(__dirname, "views"));
 
 // serve static files
-app.use(express.static(path.join(__dirname, "public")));
 
 // app.get('/', (req, res) => {
 //   res.render('index');
@@ -352,7 +353,7 @@ io.on("connection", (socket) => {
 });
 
 // console.log(process.env.PORT);
-app.listen(process.env.PORT || 3000);
+server.listen(process.env.PORT || 3000);
 // const port = process.env.envPORT;
 // const host = process.env.envHOST;
 // server.listen(port, host, () => {

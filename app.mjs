@@ -159,7 +159,7 @@ app.post("/random", (req, res) => {
 
   // const result = [];
 
-  const temp = new Array(number);
+  const temp = [];
   for (let i = 0; i < number; i++) {
     temp.push(0);
   }
@@ -170,7 +170,19 @@ app.post("/random", (req, res) => {
   //     calculateNum(minValue,maxValue)
   //   );
   // }
-  res.render("randomresult", { result: result, show: true });
+  // console.log(result);
+  const objArr = [];
+  // let index = 0;
+  for (let i = 0; i < number; i++) {
+    const newStuff = {
+      value: result[i],
+      index: i,
+    };
+    // console.log(newStuff);
+    objArr.push(newStuff);
+  }
+  // console.log(objArr);
+  res.render("randomresult", { result: objArr, show: true });
 });
 
 app.post("/List/add", (req, res) => {

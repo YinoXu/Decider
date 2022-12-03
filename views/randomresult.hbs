@@ -1,8 +1,8 @@
 <h1>The results are:</h1>
 <ol>
-    {{#each result as |r|}}
+  {{#each result}}
     <ul class="list-group">
-        <li class="list-group-item"><h2>{{r}}</h2> </li>
+      <li class="list-group-item" id={{index}}><h2>{{value}}</h2> </li>
     </ul>
-    {{/each}}
+  {{/each}}
 </ol>

@@ -31,24 +31,102 @@ describe("selenium", function () {
     const driver = await new Builder().forBrowser("firefox").build();
     //login
     await driver.get("http://localhost:3000/");
-    await driver.findElement(By.id('floatingInputGroup1')).sendKeys("88888888");
-    await driver.findElement(By.id('floatingPassword')).sendKeys('88888888');
-    await driver.findElement(By.id('login')).click();
+    await driver.findElement(By.id("floatingInputGroup1")).sendKeys("88888888");
+    await driver.findElement(By.id("floatingPassword")).sendKeys("88888888");
+    await driver.findElement(By.id("login")).click();
 
     //Add item
-    await driver.findElement(By.id('selector')).click();
-    await driver.findElement(By.id('item')).sendKeys("ricenoodle");
-    await driver.findElement(By.id('add')).click();
+    await driver.findElement(By.id("selector")).click();
+    await driver.findElement(By.id("item")).sendKeys("ricenoodle");
+    await driver.findElement(By.id("add")).click();
 
     //friends
-    const compareText = await driver.findElement(By.xpath('//li[last()]')).getText().then(function(value){
-      return value;
-    });
+    const compareText = await driver
+      .findElement(By.xpath("//li[last()]"))
+      .getText()
+      .then(function (value) {
+        return value;
+      });
     assert.equal(compareText, "88888888: ricenoodle");
-
-    
   });
 
+  it("Add a new item without using the default udername", async function () {
+    const driver = await new Builder().forBrowser("firefox").build();
+    //login
+    await driver.get("http://localhost:3000/");
+    await driver.findElement(By.id("floatingInputGroup1")).sendKeys("88888888");
+    await driver.findElement(By.id("floatingPassword")).sendKeys("88888888");
+    await driver.findElement(By.id("login")).click();
 
-  
+    //Add item
+    await driver.findElement(By.id("selector")).click();
+    await driver.findElement(By.id("username")).clear();
+    await driver.findElement(By.id("username")).sendKeys("Yino");
+    await driver.findElement(By.id("item")).sendKeys("ricenoodle");
+    await driver.findElement(By.id("add")).click();
+
+    //friends
+    const compareText = await driver
+      .findElement(By.xpath("//li[last()]"))
+      .getText()
+      .then(function (value) {
+        return value;
+      });
+    assert.equal(compareText, "Yino: ricenoodle");
+  });
+
+  it("Generate given number of numbers in a specific interval", async function () {
+    const driver = await new Builder().forBrowser("firefox").build();
+    //login
+    await driver.get("http://localhost:3000/");
+    await driver.findElement(By.id("floatingInputGroup1")).sendKeys("88888888");
+    await driver.findElement(By.id("floatingPassword")).sendKeys("88888888");
+    await driver.findElement(By.id("login")).click();
+
+    //random
+    await driver.findElement(By.id("random")).click();
+    await driver.findElement(By.id("lowerbond")).sendKeys("5");
+    await driver.findElement(By.id("upperbond")).sendKeys("20");
+    await driver.findElement(By.id("number")).sendKeys("3");
+
+    await driver.findElement(By.id("generate")).click();
+    let wrongOutput = 0;
+    for (let i = 0; i < 3; i++) {
+      const num = await driver
+        .findElement(By.id(i + ""))
+        .getText()
+        .then(function (value) {
+          return value;
+        });
+      if (num < 5 || num > 20) {
+        wrongOutput = 1;
+      }
+    }
+    assert.equal(wrongOutput, 0);
+  });
+
+  it("If we enter 2 as lowernond and 3 as upper bond, the resukt should be 3", async function () {
+    const driver = await new Builder().forBrowser("firefox").build();
+    //login
+    await driver.get("http://localhost:3000/");
+    await driver.findElement(By.id("floatingInputGroup1")).sendKeys("88888888");
+    await driver.findElement(By.id("floatingPassword")).sendKeys("88888888");
+    await driver.findElement(By.id("login")).click();
+
+    //random
+    await driver.findElement(By.id("random")).click();
+    await driver.findElement(By.id("lowerbond")).sendKeys("2");
+    await driver.findElement(By.id("upperbond")).sendKeys("3");
+    await driver.findElement(By.id("number")).sendKeys("1");
+
+    await driver.findElement(By.id("generate")).click();
+    const num = await driver
+      .findElement(By.id(0 + ""))
+      .getText()
+      .then(function (value) {
+        return value;
+      });
+
+    assert.equal(num, 3);
+  });
 });
